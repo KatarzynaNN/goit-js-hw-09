@@ -29,4 +29,4 @@ function createPromise(position, delay) {
 // }
 // };
 
-//form.addEventListener("submit", on Submit);
+//form.addEventListener("submit", onSubmit);
