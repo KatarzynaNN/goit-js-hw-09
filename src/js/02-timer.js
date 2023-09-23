@@ -57,6 +57,13 @@ function addLeadingZero(value) {
 function timerStart() {
   timerId = setInterval(() => {
     const selectedDate = calendarInput.value;
-   // const selectedDateTime = 
+    const selectedDateTime = new Date(selectedDate);
+    const currentDate = new Date();
+    const remainingTime = selectedDateTime - currentDate;
+    const { days, hours, minutes, seconds } = convertMs(remainingTime);
+    daysValue.textContent = addLeadingZero(days);
+    hoursValue.textContent = addLeadingZero(hours);
+    secondsValue.textContent = addLeadingZero(seconds);
   }, 1000);
 }
+startBtn.addEventListener('click', timerStart);
